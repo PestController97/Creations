@@ -9,6 +9,9 @@ local TeleportCheck = false
 
 if game.PlaceId == 3260590327 then --// Lobby Place
     print("Starting")
+game:GetService("GuiService").ErrorMessageChanged:Connect(function()
+        game:GetService("TeleportService"):Teleport(3260590327)
+end);
 game.Players.LocalPlayer.OnTeleport:Connect(function(State)
 	if AutoExecute and (not TeleportCheck) and queueteleport then
 		TeleportCheck = true
@@ -82,6 +85,9 @@ game:GetService("ReplicatedStorage"):WaitForChild("RemoteFunction"):InvokeServer
     
     game:GetService("ReplicatedStorage"):WaitForChild("RemoteFunction"):InvokeServer(unpack(args))
 elseif game.PlaceId == 5591597781 then --// Game Place
+game:GetService("GuiService").ErrorMessageChanged:Connect(function()
+        game:GetService("TeleportService"):Teleport(3260590327)
+end);
 local function info()
     local screenGui = Instance.new("ScreenGui")
     screenGui.Parent = game.CoreGui
