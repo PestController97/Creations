@@ -18,61 +18,7 @@ game.Players.LocalPlayer.OnTeleport:Connect(function(State)
 		queueteleport("loadstring(game:HttpGet('https://raw.githubusercontent.com/PestController97/Creations/refs/heads/main/hardcorescript'))()")
 	end
 end)
-local ReplicatedStorage = game:GetService("ReplicatedStorage")
 
-local troops = ReplicatedStorage.Assets.Troops
-
-for _, troop in pairs(troops:GetChildren()) do
-local args = {
-    [1] = "Inventory",
-    [2] = "Unequip",
-    [3] = "tower",
-    [4] = troop.Name
-}
-
-game:GetService("ReplicatedStorage"):WaitForChild("RemoteFunction"):InvokeServer(unpack(args))
-end
-wait(0.5)
-local args = {
-    [1] = "Inventory",
-    [2] = "Equip",
-    [3] = "tower",
-    [4] = "Crook Boss"
-}
-
-game:GetService("ReplicatedStorage"):WaitForChild("RemoteFunction"):InvokeServer(unpack(args))
-local args = {
-    [1] = "Inventory",
-    [2] = "Equip",
-    [3] = "tower",
-    [4] = "Electroshocker"
-}
-
-game:GetService("ReplicatedStorage"):WaitForChild("RemoteFunction"):InvokeServer(unpack(args))
-local args = {
-    [1] = "Inventory",
-    [2] = "Equip",
-    [3] = "tower",
-    [4] = "Farm"
-}
-
-game:GetService("ReplicatedStorage"):WaitForChild("RemoteFunction"):InvokeServer(unpack(args))
-local args = {
-    [1] = "Inventory",
-    [2] = "Equip",
-    [3] = "tower",
-    [4] = "Pyromancer"
-}
-
-game:GetService("ReplicatedStorage"):WaitForChild("RemoteFunction"):InvokeServer(unpack(args))
-local args = {
-    [1] = "Inventory",
-    [2] = "Equip",
-    [3] = "tower",
-    [4] = "Farm"
-}
-
-game:GetService("ReplicatedStorage"):WaitForChild("RemoteFunction"):InvokeServer(unpack(args))
     wait(2.5)
     local args = {
         [1] = "Multiplayer",
