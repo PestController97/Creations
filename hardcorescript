@@ -58,8 +58,10 @@ local function info()
             gems, level, coins
         )
     end
-
+	while true do
         updateText()
+	wait(10)
+	end
 end
 
     print("Starting")
