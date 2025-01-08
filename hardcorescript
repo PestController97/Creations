@@ -51,7 +51,7 @@ local function info()
     local function updateText()
         local gems = game:GetService("Players").LocalPlayer.Gems.Value
         local level = game:GetService("Players").LocalPlayer.Level.Value
-        local coins = game:GetService("Players")["0987041677za"].Coins.Value
+        local coins = ggame:GetService("Players").LocalPlayer.Coins.Value
 
         textLabel.Text = string.format(
             "<font color='rgb(128, 0, 128)'>Gems: %d</font> | <font color='rgb(0, 0, 255)'>Level: %d</font> | <font color='rgb(255, 255, 0)'>Coins: %d</font>",
