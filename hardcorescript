@@ -5,15 +5,16 @@ end
 local queueteleport = queue_on_teleport or (fluxus and fluxus.queue_on_teleport)
 local AutoExecute = true
 local TeleportCheck = false
+
+
+if game.PlaceId == 3260590327 then --// Lobby Place
+    print("Starting")
 game.Players.LocalPlayer.OnTeleport:Connect(function(State)
 	if AutoExecute and (not TeleportCheck) and queueteleport then
 		TeleportCheck = true
 		queueteleport("loadstring(game:HttpGet('https://raw.githubusercontent.com/PestController97/Creations/refs/heads/main/hardcorescript'))()")
 	end
 end)
-
-if game.PlaceId == 3260590327 then --// Lobby Place
-    print("Starting")
     wait(2.5)
     local args = {
         [1] = "Multiplayer",
@@ -27,6 +28,12 @@ if game.PlaceId == 3260590327 then --// Lobby Place
     game:GetService("ReplicatedStorage"):WaitForChild("RemoteFunction"):InvokeServer(unpack(args))
 elseif game.PlaceId == 5591597781 then --// Game Place
     print("Starting")
+game.Players.LocalPlayer.OnTeleport:Connect(function(State)
+	if AutoExecute and (not TeleportCheck) and queueteleport then
+		TeleportCheck = true
+		queueteleport("loadstring(game:HttpGet('https://raw.githubusercontent.com/PestController97/Creations/refs/heads/main/hardcorescript'))()")
+	end
+end)
     wait(2.5)
     local function find(targetTitle)
         for _, board in pairs(workspace.HardcoreIntermissionLobby.Boards:GetChildren()) do
