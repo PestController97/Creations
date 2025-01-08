@@ -108,8 +108,8 @@ end)
             
             game:GetService("ReplicatedStorage"):WaitForChild("RemoteEvent"):FireServer(unpack(args))
             wait(2.5)
+	    loadstring(game:HttpGet('https://raw.githubusercontent.com/PestController97/Creations/refs/heads/main/hardcorestrat.lua'))()
 	    info()
-            loadstring(game:HttpGet("https://raw.githubusercontent.com/PestController97/Creations/refs/heads/main/hardcorestrat.lua"))()
         else
             local args = {
                 [1] = "LobbyVoting",
@@ -137,8 +137,8 @@ end)
                 
                 game:GetService("ReplicatedStorage"):WaitForChild("RemoteEvent"):FireServer(unpack(args))
                 wait(2.5)
+		loadstring(game:HttpGet('https://raw.githubusercontent.com/PestController97/Creations/refs/heads/main/hardcorestrat.lua'))()
 		info()
-                loadstring(game:HttpGet("https://raw.githubusercontent.com/PestController97/Creations/refs/heads/main/hardcorestrat.lua"))()
             else
                 local TeleportService = game:GetService("TeleportService")
                 TeleportService:Teleport("3260590327")
