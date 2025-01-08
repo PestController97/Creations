@@ -63,7 +63,7 @@ end
 
     print("Starting")
     wait(2.5)
-    loadstring(game:HttpGet("https://raw.githubusercontent.com/PestController97/Creations/refs/heads/main/pizzpartystrat.lua"))()
+    loadstring(game:HttpGet("https://raw.githubusercontent.com/PestController97/Creations/refs/heads/main/pizzpartystrat"))()
 game.Players.LocalPlayer.OnTeleport:Connect(function(State)
 	if AutoExecute and (not TeleportCheck) and queueteleport then
 		TeleportCheck = true
