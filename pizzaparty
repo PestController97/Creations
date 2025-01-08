@@ -30,9 +30,6 @@ end)
 wait(60)
 game:GetService("TeleportService"):Teleport(3260590327)
 elseif game.PlaceId == 5591597781 then --// Game Place
-game:GetService("GuiService").ErrorMessageChanged:Connect(function()
-        game:GetService("TeleportService"):Teleport(3260590327)
-end);
 local function info()
     local screenGui = Instance.new("ScreenGui")
     screenGui.Parent = game.CoreGui
@@ -72,9 +69,11 @@ game.Players.LocalPlayer.OnTeleport:Connect(function(State)
 	end
 end)
     wait(2.5)
-	info()
     loadstring(game:HttpGet("https://raw.githubusercontent.com/PestController97/Creations/refs/heads/main/pizzpartystrat.lua"))()
-
+game:GetService("GuiService").ErrorMessageChanged:Connect(function()
+        game:GetService("TeleportService"):Teleport(3260590327)
+end);
+info()
 else
     print("Wrong Game")
     wait(1)
