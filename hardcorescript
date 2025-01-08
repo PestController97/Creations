@@ -27,6 +27,35 @@ end)
     
     game:GetService("ReplicatedStorage"):WaitForChild("RemoteFunction"):InvokeServer(unpack(args))
 elseif game.PlaceId == 5591597781 then --// Game Place
+local function info()
+    local screenGui = Instance.new("ScreenGui")
+    screenGui.Parent = game.CoreGui
+
+    local textLabel = Instance.new("TextLabel")
+    textLabel.Parent = screenGui
+    textLabel.Size = UDim2.new(0, 400, 0, 50)
+    textLabel.Position = UDim2.new(0.5, 0, 0.05, 0)
+    textLabel.AnchorPoint = Vector2.new(0.5, 0.5)
+    textLabel.TextSize = 24
+    textLabel.TextColor3 = Color3.fromRGB(255, 255, 255)
+    textLabel.BackgroundTransparency = 1
+    textLabel.TextStrokeTransparency = 0.8
+    textLabel.RichText = true
+
+    local function updateText()
+        local gems = game:GetService("Players").LocalPlayer.Gems.Value
+        local level = game:GetService("Players").LocalPlayer.Level.Value
+        local coins = game:GetService("Players")["0987041677za"].Coins.Value
+
+        textLabel.Text = string.format(
+            "<font color='rgb(128, 0, 128)'>Gems: %d</font> | <font color='rgb(0, 0, 255)'>Level: %d</font> | <font color='rgb(255, 255, 0)'>Coins: %d</font>",
+            gems, level, coins
+        )
+    end
+
+        updateText()
+end
+
     print("Starting")
 game.Players.LocalPlayer.OnTeleport:Connect(function(State)
 	if AutoExecute and (not TeleportCheck) and queueteleport then
@@ -70,7 +99,8 @@ end)
             }
             
             game:GetService("ReplicatedStorage"):WaitForChild("RemoteEvent"):FireServer(unpack(args))
-            wait(2.5) 
+            wait(2.5)
+	    info()
             loadstring(game:HttpGet("https://raw.githubusercontent.com/PestController97/Creations/refs/heads/main/hardcorestrat.lua"))()
         else
             local args = {
@@ -98,7 +128,8 @@ end)
                 }
                 
                 game:GetService("ReplicatedStorage"):WaitForChild("RemoteEvent"):FireServer(unpack(args))
-                wait(2.5)                
+                wait(2.5)
+		info()
                 loadstring(game:HttpGet("https://raw.githubusercontent.com/PestController97/Creations/refs/heads/main/hardcorestrat.lua"))()
             else
                 local TeleportService = game:GetService("TeleportService")
