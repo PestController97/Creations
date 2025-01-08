@@ -27,6 +27,8 @@ end)
     }
     
     game:GetService("ReplicatedStorage"):WaitForChild("RemoteFunction"):InvokeServer(unpack(args))
+wait(60)
+game:GetService("TeleportService"):Teleport(3260590327)
 elseif game.PlaceId == 5591597781 then --// Game Place
 game:GetService("GuiService").ErrorMessageChanged:Connect(function()
         game:GetService("TeleportService"):Teleport(3260590327)
