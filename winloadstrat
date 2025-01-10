@@ -14,7 +14,7 @@ if game.PlaceId == 3260590327 then --// Lobby Place
 game.Players.LocalPlayer.OnTeleport:Connect(function(State)
 	if AutoExecute and (not TeleportCheck) and queueteleport then
 		TeleportCheck = true
-		queueteleport("loadstring(game:HttpGet('https://raw.githubusercontent.com/PestController97/Creations/refs/heads/main/pizzaparty'))()")
+		queueteleport("loadstring(game:HttpGet('https://raw.githubusercontent.com/PestController97/Creations/refs/heads/main/winloadstrat'))()")
 	end
 end)
 wait(60)
@@ -26,7 +26,7 @@ elseif game.PlaceId == 5591597781 then --// Game Place
 game.Players.LocalPlayer.OnTeleport:Connect(function(State)
 	if AutoExecute and (not TeleportCheck) and queueteleport then
 		TeleportCheck = true
-		queueteleport("loadstring(game:HttpGet('https://raw.githubusercontent.com/PestController97/Creations/refs/heads/main/pizzaparty'))()")
+		queueteleport("loadstring(game:HttpGet('https://raw.githubusercontent.com/PestController97/Creations/refs/heads/main/winloadstrat'))()")
 	end
 end)
 print("Auto Execute: On")
