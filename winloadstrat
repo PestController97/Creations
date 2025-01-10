@@ -1,0 +1,43 @@
+if not game:IsLoaded() then
+    game.Loaded:Wait()
+end
+print("new script")
+local queueteleport = queue_on_teleport or (fluxus and fluxus.queue_on_teleport)
+local AutoExecute = true
+local TeleportCheck = false
+
+
+if game.PlaceId == 3260590327 then --// Lobby Place
+    print("Starting")
+    wait(2.5)
+    loadstring(game:HttpGet("https://raw.githubusercontent.com/PestController97/Creations/refs/heads/main/winstrat"))()
+game.Players.LocalPlayer.OnTeleport:Connect(function(State)
+	if AutoExecute and (not TeleportCheck) and queueteleport then
+		TeleportCheck = true
+		queueteleport("loadstring(game:HttpGet('https://raw.githubusercontent.com/PestController97/Creations/refs/heads/main/pizzaparty'))()")
+	end
+end)
+wait(60)
+game:GetService("TeleportService"):Teleport(3260590327)
+elseif game.PlaceId == 5591597781 then --// Game Place
+    print("Starting")
+    wait(2.5)
+    loadstring(game:HttpGet("https://raw.githubusercontent.com/PestController97/Creations/refs/heads/main/winstrat"))()
+game.Players.LocalPlayer.OnTeleport:Connect(function(State)
+	if AutoExecute and (not TeleportCheck) and queueteleport then
+		TeleportCheck = true
+		queueteleport("loadstring(game:HttpGet('https://raw.githubusercontent.com/PestController97/Creations/refs/heads/main/pizzaparty'))()")
+	end
+end)
+print("Auto Execute: On")
+game:GetService("GuiService").ErrorMessageChanged:Connect(function()
+        game:GetService("TeleportService"):Teleport(3260590327)
+end);
+print("Auto Rejoin: On")
+info()
+else
+    print("Wrong Game")
+    wait(1)
+    local TeleportService = game:GetService("TeleportService")
+    TeleportService:Teleport("3260590327")
+end
