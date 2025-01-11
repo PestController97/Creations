@@ -2,8 +2,18 @@ if not game:IsLoaded() then
     game.Loaded:Wait()
 end
 
+local queueteleport = queue_on_teleport or (fluxus and fluxus.queue_on_teleport)
+
+
+
 if game.PlaceId == 3260590327 then --// Lobby Place
     print("Starting")
+game.Players.LocalPlayer.OnTeleport:Connect(function(State)
+	if AutoExecute and (not TeleportCheck) and queueteleport then
+		TeleportCheck = true
+		queueteleport("loadstring(game:HttpGet('https://raw.githubusercontent.com/PestController97/Creations/refs/heads/main/hardcorescript'))()")
+	end
+end)
     wait(2.5)
     local args = {
         [1] = "Multiplayer",
@@ -21,6 +31,12 @@ if game.PlaceId == 3260590327 then --// Lobby Place
 elseif game.PlaceId == 5591597781 then --// Game Place
     print("Starting")
     wait(2.5)
+    game.Players.LocalPlayer.OnTeleport:Connect(function(State)
+	if AutoExecute and (not TeleportCheck) and queueteleport then
+		TeleportCheck = true
+		queueteleport("loadstring(game:HttpGet('https://raw.githubusercontent.com/PestController97/Creations/refs/heads/main/hardcorescript'))()")
+	end
+    end)
     local function find(targetTitle)
         for _, board in pairs(workspace.IntermissionLobby.Boards:GetChildren()) do
             local title = board:FindFirstChild("Hitboxes") and 
@@ -31,7 +47,7 @@ elseif game.PlaceId == 5591597781 then --// Game Place
                 return board
             end
         end
-        print("Not Found")
+        loadstring(game:HttpGet('https://raw.githubusercontent.com/PestController97/Creations/refs/heads/main/winstrat.lua'))()
         return nil
     end
 
@@ -85,7 +101,7 @@ elseif game.PlaceId == 5591597781 then --// Game Place
                 
                 game:GetService("ReplicatedStorage"):WaitForChild("RemoteEvent"):FireServer(unpack(args))
                 wait(2.5)                
-                print("ready")
+                loadstring(game:HttpGet('https://raw.githubusercontent.com/PestController97/Creations/refs/heads/main/winstrat.lua'))()
             else
                 local TeleportService = game:GetService("TeleportService")
                 TeleportService:Teleport("3260590327")
