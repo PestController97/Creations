@@ -11,7 +11,7 @@ if game.PlaceId == 3260590327 then --// Lobby Place
 game.Players.LocalPlayer.OnTeleport:Connect(function(State)
 	if AutoExecute and (not TeleportCheck) and queueteleport then
 		TeleportCheck = true
-		queueteleport("loadstring(game:HttpGet('https://raw.githubusercontent.com/PestController97/Creations/refs/heads/main/hardcorescript'))()")
+		queueteleport("loadstring(game:HttpGet('https://raw.githubusercontent.com/PestController97/Creations/refs/heads/main/winscript.lua'))()")
 	end
 end)
     wait(2.5)
@@ -34,7 +34,7 @@ elseif game.PlaceId == 5591597781 then --// Game Place
     game.Players.LocalPlayer.OnTeleport:Connect(function(State)
 	if AutoExecute and (not TeleportCheck) and queueteleport then
 		TeleportCheck = true
-		queueteleport("loadstring(game:HttpGet('https://raw.githubusercontent.com/PestController97/Creations/refs/heads/main/hardcorescript'))()")
+		queueteleport("loadstring(game:HttpGet('https://raw.githubusercontent.com/PestController97/Creations/refs/heads/main/winscript.lua'))()")
 	end
     end)
     local function find(targetTitle)
