@@ -4,7 +4,7 @@ end
 
 local queueteleport = queue_on_teleport or (fluxus and fluxus.queue_on_teleport)
 
-
+print("Execution Accepted")
 
 if game.PlaceId == 3260590327 then --// Lobby Place
     print("Starting")
